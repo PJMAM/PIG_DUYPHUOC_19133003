@@ -3,5 +3,5 @@ avggrp1 = FOREACH (GROUP emp by deptno) {
 unqdept = DISTINCT emp.deptno;
                  GENERATE FLATTEN(unqdept), (int)SUM(emp.sal), (int)AVG(emp.sal);
 };
-dump ag;
-store ag into 'output/pig3ex_AGV_b';
+dump avggrp1;
+store avggrp1 into 'output/pig3ex_AGV_b';
