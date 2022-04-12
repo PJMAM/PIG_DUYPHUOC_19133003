@@ -1,5 +1,5 @@
 emp = LOAD 'tbl_EMP.txt' USING PigStorage(',') as (empno:int, ename:chararray, job:chararray, mgr:int, hiredate:chararray, sal:float, comm:float, deptno:int);
-dept = LOAD 'tbl_EMP.txt' USING PigStorage(',') as (deptno:int, dname:chararray, loc:chararray);
+dept = LOAD 'tbl_DEPT.txt' USING PigStorage(',') as (deptno:int, dname:chararray, loc:chararray);
 ee = FOREACH emp GENERATE empno, ename, job, mgr, sal, comm, deptno;
 dd = FOREACH dept GENERATE deptno, dname, loc;
 
